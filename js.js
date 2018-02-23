@@ -70,3 +70,21 @@ function f5(event){
 		}
 		);
 }
+
+// 6
+$(document).ready(function(){
+		
+		$.getJSON('goods1.json', function(data){
+		console.log(data);
+		var a = '';
+		for (var key in data){
+			a+=data[key].name + '<br>';
+			a+=data[key].cost + '<br>';
+			a+=data[key].power + '<br>';
+			a+=data[key].weight + '<br>';
+			a+='<img src="'+ data[key].img +'">';
+		}
+ 		$('#out').html(a);
+	});
+		
+});
